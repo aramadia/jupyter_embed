@@ -42,10 +42,13 @@
                   };
 
                   enterShell = ''
-                    hello
+                    echo Welcome.  Run 'devenv up' to start!
                   '';
 
-                  processes.hello.exec = "hello";
+                  process.manager.implementation = "overmind";
+                  processes.jupyter.exec = "jupyter lab --KernelProvisionerFactory.default_provisioner_name=embed --ServerApp.allow_origin='https://colab.research.google.com'";
+
+
                 }
               ];
             };
