@@ -28,8 +28,16 @@ class EmbedProvisioner(KernelProvisionerBase):
             _log.warning(f"Jupyter connection file '{connection_file}' does not exist.")
 
         _log.info(f'Existing IPython kernel = {connection_file}')
+        info = {}
         with open(connection_file) as f:
-            return json.load(f)
+            info = json.load(f)
+        if "key" in info:
+            key = info["key"]
+            if isinstance(key, str):
+                key = key.encode()
+            info["key"] = key
+        print("Exiting Provisioner", str(info))
+        return info
 
     async def pre_launch(self, **kwargs):
         kwargs = await super().pre_launch(**kwargs)

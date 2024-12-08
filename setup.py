@@ -35,7 +35,7 @@ setup(
     ],
     entry_points={
         "jupyter_client.kernel_provisioners": [
-            "jupyter-embed = jupyter_embed:EmbedProvisioner"
+            "embed = jupyter_embed:EmbedProvisioner"
         ]
     },
     install_requires=[
