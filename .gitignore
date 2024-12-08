@@ -1,3 +1,5 @@
 .devenv
 .direnv
 .ipynb_checkpoints/
+*.egg-info/
+build/
