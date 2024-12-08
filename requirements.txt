@@ -1,1 +1,2 @@
 jupyter
+jupyter_existing_provisioner
